@@ -1,0 +1,18 @@
+# Installation
+
+```sh
+nixos-generate-config --dir ~/nix
+```
+
+```sh
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode destroy,format,mount ./disko.nix
+```
+
+```sh
+sudo nixos-install --flake .#Orion
+```
+
+```sh
+sudo rm -rf /mnt/root/.nix-defexpr/channels
+sudo rm -rf /mnt/nix/var/nix/profiles/per-user/root/channels
+```
