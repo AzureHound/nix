@@ -17,7 +17,7 @@
         disko.nixosModules.disko
 
         ./disko.nix
-        ./hardware.nix
+        ./hardware-configuration.nix
 
         ({ pkgs, ... }: {
           boot.loader = {

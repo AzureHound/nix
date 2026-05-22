@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+nixos-generate-config --dir ~/nix
+
+sleep 0.9 && git add .
+
+sleep 0.9 && sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode destroy,format,mount ./disko.nix
