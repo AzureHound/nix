@@ -2,7 +2,7 @@
   description = "Init flake";
 
   inputs = {
-    nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     disko = {
       url = "github:nix-community/disko";
@@ -58,7 +58,7 @@
             initialPassword = "passwd";
           };
 
-          system.stateVersion = "26.05";
+          system.stateVersion = "25.11";
         })
       ];
     };
