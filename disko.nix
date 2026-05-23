@@ -3,7 +3,7 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/nvme1n1";
+        device = "/dev/nvme0n1";
         content = {
           type = "gpt";
           partitions = {
@@ -46,28 +46,10 @@
                     };
                     "@swap" = {
                       mountpoint = "/.swapvol";
-                      swap.swapfile.size = "32G";
+                      swap.swapfile.size = "16G";
                     };
                   };
                 };
-              };
-            };
-          };
-        };
-      };
-      games = {
-        type = "disk";
-        device = "/dev/nvme0n1";
-        content = {
-          type = "gpt";
-          partitions = {
-            games = {
-              size = "100%";
-              content = {
-                type = "btrfs";
-                extraArgs = [ "-f" ];
-                mountpoint = "/mnt/games";
-                mountOptions = [ "compress=zstd" "noatime" ];
               };
             };
           };

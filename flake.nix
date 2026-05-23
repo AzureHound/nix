@@ -11,7 +11,7 @@
   };
 
   outputs = { nixpkgs, disko, ... }: {
-    nixosConfigurations.Orion = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.Notebook= nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         disko.nixosModules.disko
@@ -29,7 +29,7 @@
           };
 
           networking = {
-            hostName = "Orion";
+            hostName = "Notebook";
             networkmanager.enable = true;
           };
 
